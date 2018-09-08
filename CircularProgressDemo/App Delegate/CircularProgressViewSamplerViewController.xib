@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CircularProgressViewSamplerViewController" customModule="Fun_House">
+            <connections>
+                <outlet property="animateSwitch" destination="LlG-w9-PQY" id="Ym7-lI-xwm"/>
+                <outlet property="colorSegmentedControl" destination="I7b-bY-6F2" id="HQ6-y5-Zia"/>
+                <outlet property="continuousSwitch" destination="KvJ-dh-15a" id="5CG-JF-nRc"/>
+                <outlet property="progressSlider" destination="fJ7-bI-W96" id="boR-yx-Vi6"/>
+                <outlet property="progressViewPlaceholder" destination="4Ru-Kd-Wej" id="fM9-3p-17k"/>
+                <outlet property="stateSegmentedControl" destination="JIe-vy-0NJ" id="i8H-77-0HW"/>
+                <outlet property="view" destination="iN0-l3-epB" id="FkO-S2-7KM"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="13h-rm-PsE">
+                    <rect key="frame" x="16" y="104" width="343" height="662"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="blT-Pf-kvF">
+                            <rect key="frame" x="0.0" y="0.0" width="343" height="436"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="4Ru-Kd-Wej">
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="436"/>
+                                </view>
+                            </subviews>
+                            <variation key="heightClass=regular-widthClass=regular" alignment="center"/>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="TIF-RM-O0H">
+                            <rect key="frame" x="0.0" y="458" width="343" height="204"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="AnA-1m-AuH">
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="154"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6Xo-6S-eRb">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="64"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gk2-71-z87">
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="28"/>
+                                                    <subviews>
+                                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="JIe-vy-0NJ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="29"/>
+                                                            <segments>
+                                                                <segment title="Indeterminate"/>
+                                                                <segment title="Progress"/>
+                                                            </segments>
+                                                            <connections>
+                                                                <action selector="userChangedState:" destination="-1" eventType="valueChanged" id="cm8-Rd-VUI"/>
+                                                            </connections>
+                                                        </segmentedControl>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3D9-uh-gcW">
+                                                    <rect key="frame" x="0.0" y="36" width="343" height="28"/>
+                                                    <subviews>
+                                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="I7b-bY-6F2">
+                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="29"/>
+                                                            <segments>
+                                                                <segment title="Blue"/>
+                                                                <segment title="Green"/>
+                                                                <segment title="Gray"/>
+                                                                <segment title="Red"/>
+                                                            </segments>
+                                                            <connections>
+                                                                <action selector="userChangedColor:" destination="-1" eventType="valueChanged" id="EXD-aP-HTw"/>
+                                                            </connections>
+                                                        </segmentedControl>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Amq-tO-kgB">
+                                            <rect key="frame" x="0.0" y="84" width="343" height="70"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IEI-CP-Wtb">
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="31"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Animate" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frF-kx-x9n">
+                                                            <rect key="frame" x="0.0" y="0.0" width="167.66666666666666" height="31"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LlG-w9-PQY">
+                                                            <rect key="frame" x="175.66666666666663" y="0.0" width="169.33333333333337" height="31"/>
+                                                        </switch>
+                                                    </subviews>
+                                                    <variation key="heightClass=compact" distribution="fill"/>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6J3-10-ADy">
+                                                    <rect key="frame" x="0.0" y="39" width="343" height="31"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Continuous" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIT-8R-Mf3">
+                                                            <rect key="frame" x="0.0" y="0.0" width="167.66666666666666" height="31"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KvJ-dh-15a">
+                                                            <rect key="frame" x="175.66666666666663" y="0.0" width="169.33333333333337" height="31"/>
+                                                            <connections>
+                                                                <action selector="userToggledContinuousProgressSwitch" destination="-1" eventType="valueChanged" id="E7R-Af-0jP"/>
+                                                            </connections>
+                                                        </switch>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <variation key="heightClass=compact" axis="horizontal"/>
+                                        </stackView>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Gzc-kW-mqs">
+                                    <rect key="frame" x="0.0" y="174" width="343" height="30"/>
+                                    <subviews>
+                                        <slider opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.01" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fJ7-bI-W96">
+                                            <rect key="frame" x="32.333333333333343" y="0.0" width="278.33333333333326" height="31"/>
+                                            <connections>
+                                                <action selector="userChangedProgressValue" destination="-1" eventType="valueChanged" id="xho-dg-YkI"/>
+                                            </connections>
+                                        </slider>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="fJ7-bI-W96" firstAttribute="width" secondItem="Gzc-kW-mqs" secondAttribute="width" multiplier="0.8" id="4m8-uO-Yqs"/>
+                                    </constraints>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="4Ru-Kd-Wej" firstAttribute="width" secondItem="13h-rm-PsE" secondAttribute="width" multiplier="0.4" id="Oev-Mz-9c0"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Oev-Mz-9c0"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=regular">
+                        <mask key="constraints">
+                            <include reference="Oev-Mz-9c0"/>
+                        </mask>
+                    </variation>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailingMargin" secondItem="13h-rm-PsE" secondAttribute="trailing" id="W80-g1-yzU"/>
+                <constraint firstItem="13h-rm-PsE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="al9-FK-lkl"/>
+                <constraint firstItem="4Ru-Kd-Wej" firstAttribute="top" secondItem="ZAG-Zl-Ffv" secondAttribute="top" constant="16" id="gma-5q-mpH"/>
+                <constraint firstAttribute="bottomMargin" secondItem="13h-rm-PsE" secondAttribute="bottom" constant="12" id="xgR-cX-enx"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <viewLayoutGuide key="safeArea" id="ZAG-Zl-Ffv"/>
+        </view>
+    </objects>
+</document>
