@@ -25,8 +25,8 @@ extension ReusableViewIdentifier {
 
 extension ReusableViewIdentifier: Hashable {
 
-    public var hashValue: Int {
-        return reuseIdentifier.hashValue
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(reuseIdentifier)
     }
 
     public static func ==(lhs: ReusableViewIdentifier, rhs: ReusableViewIdentifier) -> Bool {
